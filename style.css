@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    position: relative;
+    background: #c7efff;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+}
+.playbutton{
+    position: fixed;
+    top: 10;
+    right: 0;
+    background: rgb(0, 255, 221);
+    color: #fff;
+    padding: 0 1.8em;
+    z-index: 90;
+    cursor: pointer;
+    border-radius: .2em;
+    font-family: monospace;
+    font-size: 2em;
+    opacity: .5;
+}
+.road img{
+    height: 25vh;
+    width: 200vw;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+    animation: moving 3s linear infinite 1s;
+}
+
+@keyframes moving {
+    100%{
+        transform: translate(-100vw);
+    }
+}
+
+.trees{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200vw;
+    display: flex;
+    z-index: 5;
+    animation: moving 3s linear infinite 1s;
+}
+
+.trees img{
+    width: 100vw;
+    height: 80vh;
+}
+
+.car-body{
+    height: 130px;
+    position: absolute;
+    left: 20vw;
+    bottom: 10vh;
+    z-index: 20;
+}
+
+.weheel-1{
+    height: 70px;
+    position: absolute;
+    left: 310px;
+    top: 500px;
+    z-index: 30;
+    animation: rotate 0.3s linear infinite 1s;
+}
+
+.weheel-2{
+    height: 70px;
+    position: absolute;
+    left: 586px;
+    top: 501px;
+    z-index: 30;
+    animation: rotate 0.3s linear infinite 1s;
+}
+
+.man{
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    left: 420px;
+    bottom: 260px;
+    z-index: 20;
+}
+
+
+
+
+
+
+@keyframes rotate {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+/* media query  */
+@media screen and (max-width: 688px) {
+    .car-body{
+        height: 100px;
+        position: absolute;
+        left: 20px;
+    }
+
+    .weheel-1{
+        position: absolute;
+        top: 550px;
+        left: 260px;
+        height: 55px;
+    }
+
+    .weheel-2{
+        position: absolute;
+        top: 550px;
+        left: 50px;
+        height: 55px;
+    }
+
+    .man{
+        position: absolute;
+        left: 140px;
+        top: 420px;
+    }
+
+    .man img{
+        height: 150px;
+    }
+}
+

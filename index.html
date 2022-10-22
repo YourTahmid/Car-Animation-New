@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- this audio will play for once when we refresh browser -->
+
+
+    <audio >
+        <source src="car straring sound.mp3">
+    </audio>
+
+    <audio loop>
+        <source src="car sound effect.mp3">
+    </audio>
+
+
+        <div class="playbutton">PLAY</div>
+    <div class="container">
+        <div class="road">
+            <img src="road.png" alt="">
+        </div>
+    
+        <div class="trees">
+            <img src="trees.png" alt="">
+            <img src="trees.png" alt="">
+        </div>
+    
+        <div class="car">
+            <img src="car.png" alt="" class="car-body">
+            <img src="wheel.png" alt="" class="weheel-1">
+            <img src="wheel.png" alt="" class="weheel-2">
+        </div>
+
+        <div class="man">
+            <img src="man.png" alt="">
+        </div>
+
+    </div>
+    <script>
+       const button = document.querySelector('.playbutton')
+       button.addEventListener('click', (e) => {
+        document.querySelectorAll('audio').forEach(audio => {
+            if(audio.paused){
+                audio.duration = 0
+              e.currentTarget.innerText = 'playing'.toUpperCase()
+                return audio.play()
+            }else {
+                audio.pause()
+                e.currentTarget.innerText = 'play'.toUpperCase()
+
+
+            }
+            
+
+        })
+       })
+    </script>
+</body>
+</html>
